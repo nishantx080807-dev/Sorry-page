@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sorry!</title>
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; margin-top: 100px; }
+    button { padding: 15px 30px; font-size: 18px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>I'm really sorry...</h1>
+  <button id="accept">Accept ❤️</button>
+  <button id="reject">Not Accepted ❌</button>
+
+  <script>
+    const acceptBtn = document.getElementById("accept");
+    const rejectBtn = document.getElementById("reject");
+    let shrink = 1;
+
+    rejectBtn.onclick = () => {
+      shrink -= 0.1;
+      if (shrink > 0.2) {
+        rejectBtn.style.transform = `scale(${shrink})`;
+      } else {
+        rejectBtn.innerText = "Please reconsider 🥺";
+      }
+    };
+
+    acceptBtn.onclick = () => {
+      document.body.innerHTML = "<h1>Arigato gozaimasu 🙏</h1>";
+    };
+  </script>
+</body>
+</html>
