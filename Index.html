@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>I'm Sorry</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #accept {
+      background: #4CAF50;
+      color: white;
+    }
+
+    #reject {
+      background: #f44336;
+      color: white;
+    }
+
+    #message {
+      margin-top: 40px;
+      font-size: 30px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>I’m really sorry 🥺</h1>
+  <p>Please forgive me?</p>
+
+  <button id="accept">Accepted ❤️</button>
+  <button id="reject">Not Accepted ❌</button>
+
+  <div id="message">Arigato gozaimasu 🙏</div>
+
+  <script>
+    let rejectButton = document.getElementById("reject");
+    let acceptButton = document.getElementById("accept");
+    let message = document.getElementById("message");
+    let size = 1;
+
+    rejectButton.addEventListener("click", function() {
+      size -= 0.1;
+      if (size > 0.3) {
+        rejectButton.style.transform = "scale(" + size + ")";
+      } else {
+        rejectButton.innerText = "Are you sure? 🥺";
+      }
+    });
+
+    acceptButton.addEventListener("click", function() {
+      document.body.innerHTML = "<h1 style='color:white; padding-top:150px;'>Arigato gozaimasu 🙏</h1>";
+    });
+  </script>
+
+</body>
+</html>
