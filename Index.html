@@ -50,7 +50,7 @@
   <button id="accept">Accepted ❤️</button>
   <button id="reject">Not Accepted ❌</button>
 
-  <div id="message">Arigato gozaimasu 🙏</div>
+  <div id="message" role="status" aria-live="polite">Arigato gozaimasu 🙏</div>
 
   <script>
     let rejectButton = document.getElementById("reject");
@@ -68,7 +68,11 @@
     });
 
     acceptButton.addEventListener("click", function() {
-      document.body.innerHTML = "<h1 style='color:white; padding-top:150px;'>Arigato gozaimasu 🙏</h1>";
+      document.querySelector("h1").hidden = true;
+      document.querySelector("p").hidden = true;
+      acceptButton.hidden = true;
+      rejectButton.hidden = true;
+      message.style.display = "block";
     });
   </script>
 
